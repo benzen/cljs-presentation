@@ -19,7 +19,7 @@
 
 		<!-- Code syntax highlighting -->
 		<link rel="stylesheet" href="lib/css/zenburn.css">
-
+		<link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.css">
 		<!-- Printing and PDF exports -->
 		<script>
 			var link = document.createElement( 'link' );
@@ -38,344 +38,353 @@
 
 		<div class="reveal">
 
-			<!-- Any section element inside of this container is displayed as a slide -->
 			<div class="slides">
-				<section>
-					<h1>Reveal.js</h1>
-					<h3>The HTML Presentation Framework</h3>
-					<p>
-						<small>Created by <a href="http://hakim.se">Hakim El Hattab</a> / <a href="http://twitter.com/hakimel">@hakimel</a></small>
-					</p>
+        <section>
+          <img src="images/cljs.svg" style="height:50%; width:20%; border:none; background-color:transparent ">
+          <h1>Clojurescript</h1>
+          <h3>Coffeescript++</h3>
+          <small>
+            <a href="http://benzen.github.io/">
+              <i class="fa fa-large fa-github"></i>Benjamin Dreux
+            </a>
+          </small>
+          <br>
+          <small>
+            <a href="http://twitter.com/benzen">
+              <i class="fa fa-large fa-twitter"></i>@Benjamin Dreux</a>
+          </small>
+          <br>
+          <small>
+            <a href="http://stackoverflow.com/users/340467/benzen">
+              <i class="fa fa-stack-overflow">&nbsp;</i>
+            </a>
+            <a href="https://www.linkedin.com/pub/benjamin-dreux/18/7a/aa6">
+              <i class="fa fa-linkedin">&nbsp;</i>
+            </a>
+            <a href="http://www.code3.ca">
+              <i class="fa fa-rebel">&nbsp;</i>
+            </a>
+          </small>
 				</section>
+        <section>
+          <h1 style="text-decoration: line-through;">Objectifs</h1>
+          <ul>
+            <li>♥ syntaxe lisp <span class="fragment">(très simple)</span></li>
+            <li>Meilleur langage <span class="fragment">(meilleur que JS)</span></li>
+          </ul>
+        </section>
+        <section>
+          <h1>Objectifs</h1>
+          <ul>
+            <li>Plateforme JS / Language Js</li>
+          </ul>
+          <!--<p>Goût de l'expérience</p>-->
+          <!--<ul>-->
+            <!--<li><p class="fragment">autre language</p></li>-->
+            <!--<li><p class="fragment">autre plateforme</p></li>-->
+            <!--<li><p class="fragment">autre communauté</p></li>-->
+            <!--</ul>-->
+        </section>
+        <section>
+          <h1>Histoire 101</h1>
+          <img style="width: 80%" class="fragment" src="images/histoire.jpg">
+        </section>
+        <section>
+          <ul>
+            <li>1958: Lisp (John McCarthy)</li>
+            <li class="fragment">.... <span class="fragment">C</span> 
+                                      <span class="fragment">Erlang</span>            
+                                      <span class="fragment">C++</span>
+                                      <span class="fragment">Java</span>
+                                      </li>
+            <li class="fragment">2007: Clojure (Rich Hickey)</li>
+            <li class="fragment">2011: Clojurescript (Rich Hickey)</li>
+          </ul>
+        </section>
+        <section>
+          <description style="font-family: bold; font-size: larger; font-weight: 600; font-variant: small-caps">
+          clojurescript</description> <span style="font-size: smaller"> n.m. <i>gre. Parenthos Scriptis</i>
+          Langage de programmation fonctionnel à typage dynamique fort, membre de la famille des 
+          LISP. Conçu pour être compilé vers le bytecode des navigateurs internet.</span>
+        </section>
+        <section>
+          <h1>Cibles</h1>
+          <ul style="list-style: none;">
+            <li>Navigateur</li>
+            <li>Nashorn (Oracle)</li>
+            <li>Rhino (Mozilla)</li>
+            <li>JavaScriptCore (Apple)</li>
+            <li class="fragment"><span style="text-decoration:line-through;">Iojs</span>/Node </li>
+          </ul>
+        </section>
+        <section>
+          <h1>Google clo<span style="text-decoration: underline">S</span>ure</h1>
+          <ul>
+            <li>Librairie</li>
+            <li class="fragment">Compilateur</li>
+          </ul>
+        </section>
+        <section>
+          <img src="images/compressed.jpg"/>
+        </section>
+        <section>
+          <img src="images/uglify.jpg">
+        </section>
+        <section>
+          <img src="images/deadcode.png">
+        </section>
+        <section>
+          <h1>Langage</h1>
+        </section>
+       
+        <section>
+          <h2>Syntaxe *</h2>
+          <img style="height:80%; width: 80%;" src="images/parenthesis.jpg">
+          <p><small>* Peut contenir des traces de parenthèses</small></p>
+        </section>
+        <section>
+          <table class="no-border">
+            <tr><td>Symbol</td>            <td>abc</td></tr>
+            <tr><td>String</td>            <td>"abc"</td></tr>
+            <tr><td>keyword</td>           <td>:abc</td></tr>
+            <tr><td>List</td>              <td>()</td> <td>(accès par la tête)</td></tr>
+            <tr><td>Vector</td>            <td>[]</td> <td>(accès par index)</td></tr>
+            <tr><td>Map</td>               <td>{:key "value"}</td> <td>(key = struct)</td></tr>
+            <tr><td>Set</td>               <td>#{"pomme"}</td></tr>
+            <tr><td>Absence de valeur</td> <td>nil</td></tr>
+            <tr><td>booleen</td>           <td>true/false</td></tr>
+            <tr><td>Appel de fonction</td> <td>(inc 10)</td></tr>
+          </table>
+        </section>
+        <section>
+          <h2>Règles de précédence</h2>
+          <i class="fa fa-dot-circle-o">&nbsp;</i>
 
-				<section>
-					<h2>Hello There</h2>
-					<p>
-						reveal.js enables you to create beautiful interactive slide decks using HTML. This presentation will show you examples of what it can do.
-					</p>
-				</section>
-
-				<!-- Example of nested vertical slides -->
-				<section>
-					<section>
-						<h2>Vertical Slides</h2>
-						<p>Slides can be nested inside of each other.</p>
-						<p>Use the <em>Space</em> key to navigate through all slides.</p>
-						<br>
-						<a href="#" class="navigate-down">
-							<img width="178" height="238" data-src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Down arrow">
-						</a>
-					</section>
-					<section>
-						<h2>Basement Level 1</h2>
-						<p>Nested slides are useful for adding additional detail underneath a high level horizontal slide.</p>
-					</section>
-					<section>
-						<h2>Basement Level 2</h2>
-						<p>That's it, time to go back up.</p>
-						<br>
-						<a href="#/2">
-							<img width="178" height="238" data-src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Up arrow" style="-webkit-transform: rotate(180deg);">
-						</a>
-					</section>
-				</section>
-
-				<section>
-					<h2>Slides</h2>
-					<p>
-						Not a coder? Not a problem. There's a fully-featured visual editor for authoring these, try it out at <a href="http://slides.com" target="_blank">http://slides.com</a>.
-					</p>
-				</section>
-
-				<section>
-					<h2>Point of View</h2>
-					<p>
-						Press <strong>ESC</strong> to enter the slide overview.
-					</p>
-					<p>
-						Hold down alt and click on any element to zoom in on it using <a href="http://lab.hakim.se/zoom-js">zoom.js</a>. Alt + click anywhere to zoom back out.
-					</p>
-				</section>
-
-				<section>
-					<h2>Touch Optimized</h2>
-					<p>
-						Presentations look great on touch devices, like mobile phones and tablets. Simply swipe through your slides.
-					</p>
-				</section>
-
-				<section data-markdown>
-					<script type="text/template">
-						## Markdown support
-
-						Write content using inline or external Markdown.
-						Instructions and more info available in the [readme](https://github.com/hakimel/reveal.js#markdown).
-
-						```
-						<section data-markdown>
-						  ## Markdown support
-
-						  Write content using inline or external Markdown.
-						  Instructions and more info available in the [readme](https://github.com/hakimel/reveal.js#markdown).
-						</section>
-						```
-					</script>
-				</section>
-
-				<section>
-					<section id="fragments">
-						<h2>Fragments</h2>
-						<p>Hit the next arrow...</p>
-						<p class="fragment">... to step through ...</p>
-						<p><span class="fragment">... a</span> <span class="fragment">fragmented</span> <span class="fragment">slide.</span></p>
-
-						<aside class="notes">
-							This slide has fragments which are also stepped through in the notes window.
-						</aside>
-					</section>
-					<section>
-						<h2>Fragment Styles</h2>
-						<p>There's different types of fragments, like:</p>
-						<p class="fragment grow">grow</p>
-						<p class="fragment shrink">shrink</p>
-						<p class="fragment roll-in">roll-in</p>
-						<p class="fragment fade-out">fade-out</p>
-						<p class="fragment current-visible">current-visible</p>
-						<p class="fragment highlight-red">highlight-red</p>
-						<p class="fragment highlight-blue">highlight-blue</p>
-					</section>
-				</section>
-
-				<section id="transitions">
-					<h2>Transition Styles</h2>
-					<p>
-						You can select from different transitions, like: <br>
-						<a href="?transition=none#/transitions">None</a> -
-						<a href="?transition=fade#/transitions">Fade</a> -
-						<a href="?transition=slide#/transitions">Slide</a> -
-						<a href="?transition=convex#/transitions">Convex</a> -
-						<a href="?transition=concave#/transitions">Concave</a> -
-						<a href="?transition=zoom#/transitions">Zoom</a>
-					</p>
-				</section>
-
-				<section id="themes">
-					<h2>Themes</h2>
-					<p>
-						reveal.js comes with a few themes built in: <br>
-						<!-- Hacks to swap themes after the page has loaded. Not flexible and only intended for the reveal.js demo deck. -->
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/black.css'); return false;">Black (default)</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/white.css'); return false;">White</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/league.css'); return false;">League</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/sky.css'); return false;">Sky</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/beige.css'); return false;">Beige</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/simple.css'); return false;">Simple</a> <br>
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/serif.css'); return false;">Serif</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/night.css'); return false;">Night</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/moon.css'); return false;">Moon</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/solarized.css'); return false;">Solarized</a>
-					</p>
-				</section>
-
-				<section>
-					<section data-background="#dddddd">
-						<h2>Slide Backgrounds</h2>
-						<p>
-							Set <code>data-background="#dddddd"</code> on a slide to change the background color. All CSS color formats are supported.
-						</p>
-						<a href="#" class="navigate-down">
-							<img width="178" height="238" data-src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Down arrow">
-						</a>
-					</section>
-					<section data-background="https://s3.amazonaws.com/hakim-static/reveal-js/image-placeholder.png">
-						<h2>Image Backgrounds</h2>
-						<pre><code>&lt;section data-background="image.png"&gt;</code></pre>
-					</section>
-					<section data-background="https://s3.amazonaws.com/hakim-static/reveal-js/image-placeholder.png" data-background-repeat="repeat" data-background-size="100px">
-						<h2>Tiled Backgrounds</h2>
-						<pre><code style="word-wrap: break-word;">&lt;section data-background="image.png" data-background-repeat="repeat" data-background-size="100px"&gt;</code></pre>
-					</section>
-					<section data-background-video="https://s3.amazonaws.com/static.slid.es/site/homepage/v1/homepage-video-editor.mp4,https://s3.amazonaws.com/static.slid.es/site/homepage/v1/homepage-video-editor.webm" data-background-color="#000000">
-						<div style="background-color: rgba(0, 0, 0, 0.9); color: #fff; padding: 20px;">
-							<h2>Video Backgrounds</h2>
-							<pre><code style="word-wrap: break-word;">&lt;section data-background-video="video.mp4,video.webm"&gt;</code></pre>
-						</div>
-					</section>
-				</section>
-
-				<section data-transition="slide" data-background="#4d7e65" data-background-transition="zoom">
-					<h2>Background Transitions</h2>
-					<p>
-						Different background transitions are available via the backgroundTransition option. This one's called "zoom".
-					</p>
-					<pre><code>Reveal.configure({ backgroundTransition: 'zoom' })</code></pre>
-				</section>
-
-				<section data-transition="slide" data-background="#b5533c" data-background-transition="zoom">
-					<h2>Background Transitions</h2>
-					<p>
-						You can override background transitions per-slide.
-					</p>
-					<pre><code style="word-wrap: break-word;">&lt;section data-background-transition="zoom"&gt;</code></pre>
-				</section>
-
-				<section>
-					<h2>Pretty Code</h2>
-					<pre><code data-trim contenteditable>
-function linkify( selector ) {
-  if( supports3DTransforms ) {
-
-    var nodes = document.querySelectorAll( selector );
-
-    for( var i = 0, len = nodes.length; i &lt; len; i++ ) {
-      var node = nodes[i];
-
-      if( !node.className ) {
-        node.className += ' roll';
-      }
-    }
-  }
-}
-					</code></pre>
-					<p>Code syntax highlighting courtesy of <a href="http://softwaremaniacs.org/soft/highlight/en/description/">highlight.js</a>.</p>
-				</section>
-
-				<section>
-					<h2>Marvelous List</h2>
-					<ul>
-						<li>No order here</li>
-						<li>Or here</li>
-						<li>Or here</li>
-						<li>Or here</li>
-					</ul>
-				</section>
-
-				<section>
-					<h2>Fantastic Ordered List</h2>
-					<ol>
-						<li>One is smaller than...</li>
-						<li>Two is smaller than...</li>
-						<li>Three!</li>
-					</ol>
-				</section>
-
-				<section>
-					<h2>Tabular Tables</h2>
-					<table>
-						<thead>
-							<tr>
-								<th>Item</th>
-								<th>Value</th>
-								<th>Quantity</th>
-							</tr>
-						</thead>
-						<tbody>
-							<tr>
-								<td>Apples</td>
-								<td>$1</td>
-								<td>7</td>
-							<tr>
-							<tr>
-								<td>Lemonade</td>
-								<td>$2</td>
-								<td>18</td>
-							<tr>
-							<tr>
-								<td>Bread</td>
-								<td>$3</td>
-								<td>2</td>
-							<tr>
-						</tbody>
-					</table>
-				</section>
-
-				<section>
-					<h2>Clever Quotes</h2>
-					<p>
-						These guys come in two forms, inline: <q cite="http://searchservervirtualization.techtarget.com/definition/Our-Favorite-Technology-Quotations">
-						&ldquo;The nice thing about standards is that there are so many to choose from&rdquo;</q> and block:
-					</p>
-					<blockquote cite="http://searchservervirtualization.techtarget.com/definition/Our-Favorite-Technology-Quotations">
-						&ldquo;For years there has been a theory that millions of monkeys typing at random on millions of typewriters would
-						reproduce the entire works of Shakespeare. The Internet has proven this theory to be untrue.&rdquo;
-					</blockquote>
-				</section>
-
-				<section>
-					<h2>Intergalactic Interconnections</h2>
-					<p>
-						You can link between slides internally,
-						<a href="#/2/3">like this</a>.
-					</p>
-				</section>
-
-				<section>
-					<h2>Speaker View</h2>
-					<p>There's a <a href="https://github.com/hakimel/reveal.js#speaker-notes">speaker view</a>. It includes a timer, preview of the upcoming slide as well as your speaker notes.</p>
-					<p>Press the <em>S</em> key to try it out.</p>
-
-					<aside class="notes">
-						Oh hey, these are some notes. They'll be hidden in your presentation, but you can see them if you open the speaker notes window (hit 's' on your keyboard).
-					</aside>
-				</section>
-
-				<section>
-					<h2>Export to PDF</h2>
-					<p>Presentations can be <a href="https://github.com/hakimel/reveal.js#pdf-export">exported to PDF</a>, here's an example:</p>
-					<iframe src="//www.slideshare.net/slideshow/embed_code/42840540" width="445" height="355" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:3px solid #666; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe>
-				</section>
-
-				<section>
-					<h2>Global State</h2>
-					<p>
-						Set <code>data-state="something"</code> on a slide and <code>"something"</code>
-						will be added as a class to the document element when the slide is open. This lets you
-						apply broader style changes, like switching the page background.
-					</p>
-				</section>
-
-				<section data-state="customevent">
-					<h2>State Events</h2>
-					<p>
-						Additionally custom events can be triggered on a per slide basis by binding to the <code>data-state</code> name.
-					</p>
-					<pre><code class="javascript" data-trim contenteditable style="font-size: 18px;">
-Reveal.addEventListener( 'customevent', function() {
-	console.log( '"customevent" has fired' );
-} );
-					</code></pre>
-				</section>
-
-				<section>
-					<h2>Take a Moment</h2>
-					<p>
-						Press B or . on your keyboard to pause the presentation. This is helpful when you're on stage and want to take distracting slides off the screen.
-					</p>
-				</section>
-
-				<section>
-					<h2>Much more</h2>
-					<ul>
-						<li>Right-to-left support</li>
-						<li><a href="https://github.com/hakimel/reveal.js#api">Extensive JavaScript API</a></li>
-						<li><a href="https://github.com/hakimel/reveal.js#auto-sliding">Auto-progression</a></li>
-						<li><a href="https://github.com/hakimel/reveal.js#parallax-background">Parallax backgrounds</a></li>
-						<li><a href="https://github.com/hakimel/reveal.js#keyboard-bindings">Custom keyboard bindings</a></li>
-					</ul>
-				</section>
-
-				<section style="text-align: left;">
-					<h1>THE END</h1>
-					<p>
-						- <a href="http://slides.com">Try the online editor</a> <br>
-						- <a href="https://github.com/hakimel/reveal.js">Source code &amp; documentation</a>
-					</p>
-				</section>
-
-			</div>
-
-		</div>
-
+          <ul><li></li><ul>
+        </section>
+        <section>
+          <h2>Expression/Statment</h2>
+          <p class="fragment">Exemple du if</p>
+              <table class="fragment">
+                <tr>
+                  <th>Langage</th>
+                  <th>Type</th>
+                  <th>Valeur</th>
+                </td>
+                <tr class="fragment">
+                  <td>Js</td>
+                  <td>statment</td>
+                  <td>ø</td>
+                </tr>
+                <tr class="fragment">
+                  <td>cljs/coffee</td>
+                  <td>expression</td>
+                  <td>Valeur du corps<br> (branche true/false)</td>
+                </tr>
+              </table>
+        </section>
+        <section>
+          <h3>Persistant Immutable Data Structure</h3>          
+        </section>
+        <section>
+          <img style="width:60%; height: 60%" src="images/marbre.jpg">
+          </section>
+          <section>
+          <img style="width:40%; height: 60%" src="images/venus.jpg">
+          </section>
+          <section>
+          <ul>
+            <li>Immuable et Efficace</li>
+            <li>Plus lent qu' Object et Array</li>
+            <li>Différence négligeable (v8 & ionMonkey)</li>
+          </ul>
+        </section>
+        <section>
+          Évaluation paresseuse
+          <image src="images/lazy.jpg"></image>
+        </section>
+        <section>
+          Example de Code
+          <pre><code class="clojure">
+(map inc [1 2 3 4]) 
+;; => (2 3 4 5)
+          </code></pre>
+        </section>
+        <section>
+          <p>Simple, non ?</p>
+          <p class="fragment">Trop, simple ?</p>
+          <p class="fragment">MACRO</p>
+        </section>
+        <section>
+          <img src="images/artillerie.jpg" style="width:90%"/>
+        </section>
+        <section>
+          Namespace<br>
+          <img src="images/pigeonnier.jpg" style="width: 70%">
+        </section>
+        <section>
+          <h2>Js Interop</h2>
+          <img src="images/wire.jpg" style="width: 40%; height: 50%">
+        </section>
+        <section>
+          <table style="width: 1100px;">
+            <tr>
+              <td>
+              JS namespace                 
+              </td>
+              <td><pre><code class="clojure">js/*</code></pre></td>
+            </tr>
+            <tr>
+              <td>creation d'objet </td>
+              <td><pre><code class="clojure">(js/Date)</code></pre></td>
+            </tr>
+            <tr>
+              <td>appel de fonction</td>
+              <td><pre><code class="clojure">(js/alert "some text")</code></pre></td>
+            </tr>
+            <tr>
+              <td> output direct</td>
+              <td><pre><code class="clojure">(js* "myFunky-weirdMethod(a b c)")</code></pre></td>
+            </tr>
+            <tr>
+              <td>Reader litteral</td>
+              <td><pre><code class="clojure">#js {:key "value"}</code></pre></td>
+            </tr>
+            <tr>
+              <td>Conversion des types natifs</td>
+              <td>
+                <pre><code class="clojure">(js->cljs regular-js-array)</code></pre>
+                <pre><code class="clojure">(cljs->js peristant-vector)</code></pre>
+              </td>
+            </tr>
+          </table>
+        </section>
+        <section>
+          <h1>Documentation</h1>
+          <ul>
+            <li>~ Clojure</li>
+            <li>+ Interop</li>
+            <li>cljs.info</li>
+          </ul>
+        </section>
+        <section>
+        <h1>Build tool</h1>
+        <table>
+          <tr>
+            <td style="border-right: white solid 1px;">Style</td>
+            <td>Clojure</td>
+            <td>Node</td>
+          </tr>
+          <tr>
+            <td style="border-right: white solid 1px;">Configuration</td>
+            <td>Leiningen</td>
+            <td>Grunt</td>
+          </tr>
+          <tr>
+            <td style="border-right: white solid 1px;">Code</td>
+            <td>boot</td>
+            <td>Gulp</td>
+          </tr>
+        </table>
+        </section>
+        <section>
+        <h1>React & cljs</h1>
+        <ul>
+          <li>Om</li>
+          <li>Reageant</li>
+          <li>Quiescent</li>
+          <li>Rum</li>
+        </ul>
+        </section>
+        <section>
+        <h1>React & cljs</h1>
+        <ul>
+          <li>undo/redo</li>
+          <li>hot swap</li>
+          <li>Transmettre l'état de l'app</li>
+        </ul>
+        </section>
+        <section>
+        <h1>Transfert de donnée</h1>
+        </section>
+        <section>
+        <h2>EDN</h2>
+        <ul>
+          <li>Format indépendant</li>
+          <li>Proche de clojure</li>
+          <li>Extensibilité a la XML</li>
+          <li>Human readable</li>
+          <li>LENT</li>
+        </ul>
+        </section>
+        <section>
+          <h1>Transit</h1>
+          <ul>
+            <li>Idem EDN</li>
+            <li>Human NOT readable</li>
+            <li>Aussi rapide que JSON.parse/JSON.stringify</li>
+          </ul>
+        </section>
+        <section>
+          <h1>cljs.test/core.test</h1>
+          Test unitaire<br>
+          <small>clojurescript/clojure</small>
+        </section>
+        <section>
+          <h1>test.check</h1>
+          Test de propriété<br>
+          <small>clojure/clojurescript</small>
+        </section>
+        <section>
+          <h1>core.logic</h1>
+          Programmation logique (~Prolog)<br>
+          <small>clojure/cljs</small>
+        </section>
+        <section>
+          <h1>core.async</h1>
+          CSP<br>
+          <small>clojure/cljs</small>
+        </section>
+        <section>
+          <h1>core.match</h1>
+          Pattern matching<br>
+          <small>clojure/cljs</small>
+        </section>
+        <section>
+          <h1>core.typed</h1>
+          typage graduel<br>
+          <small/>clojure</small>
+        </section>
+        <section>
+        <h1>Futur ?</h1>
+          <ul>
+            <li>Clojurescript en clojurescript ?</li>
+            <li>clojure-in-clojure</li>
+            <li>Meilleur doc (cljs.info)</li>
+          </ul>
+        </section>
+        <section>
+          <h1>Questions?</h1>
+        </section>
+        <section>
+          <h1>Crédits photos</h1>
+          <table class="no-border left-column-right-aligned" style="font-size:30px">
+            <tr><td>Simon "Bourguiboeuf"</td><td><a href="https://www.flickr.com/photos/bourguiboeuf/8735094739/in/photolist-eiTDkH-8k7ge5-rQTiqG-boU93A-kp7qgM-93vSGA-bquCJb-5QY27j-8FBE4d-qa5GCY-bfjXyD-r4QHV-2gPSUV-6gspgD-9XcGMJ-cLCoiw-39xh2L-cHuLv1-4V7Qyr-bv3PMJ-7Kc71m-cYVbxG-93WQyh-9xG6x8-9xG6kV-9xG6a6-9xG5MM-nWRPSp-8VmuEf-rj7gSR-ePiuD1-9r1kL2-bfEJ1D-bX6bML-6SYXj7-9QFodf-bfuwPP-9ag4e5-7JfL4R-7dr3Z1-aHBzEB-c28Azy-5X9As7-bxY5bL-eKGL9w-5pC6rH-du5dKd-nxf37Y-4NBsKZ-qKNJ1E">Tout ne vas pas plus vite</a></td></tr>
+            <tr><td>Lionel Royer</td><td><a href="http://fr.wikipedia.org/wiki/Vercing%C3%A9torix#/media/File:Siege-alesia-vercingetorix-jules-cesar.jpg">Vercingétorix jette ses armes aux pieds de César</a></td></tr>
+            <tr><td>Quinn Dombrowski</td><td><a href="https://www.flickr.com/photos/quinnanya/3820664895/">Spare parentheses</a></td></tr>
+            <tr><td>Kelp</td><td><a href="https://www.flickr.com/photos/kelp/4894889826/in/photolist-8sxAdb-caodZN-8st9Br-5nAUDw-2u7MtU-aHdsav-dKxz6a-ih72kX-dKxz36-fKqfR-fvcxxG-dHGxov-dnxrYT-ah3rDf-6AZ7NS-ih6SbU-4GqApQ-5Fnvj8-dKD2qd-8Xx5af-8v2gxe-8y7iS3-8DBTtF-chgk33-dKxyHe-7AMDgK-6k2wnu-DjnpK-2erjSS-5j96Sh-26nYEp-7ivDxt-BJ28h-2hTaj2-nmLheP-nn3Btn-8KbPhQ-6F3hUH-qktU-8Bdk91-7izz8m-8XRqoj-dFnRkC-8Bdk27-dKxxNx-9txgCi-bboJrt-7ivCNt-rgVd9-neFKBw">Wiring After</a></td></tr>
+            <tr><td>Fmpgoh</td><td><a href="https://www.flickr.com/photos/fmpgoh/3736007338/in/photolist-6G91PC-qGCn2w-4T4xCn-nLAao5-svZYF-qpEbQ9-4WqR7-pMV2Sb-fbkmG-bD2Tn2-bq7XbQ-vCsSK-7xUBN3-dt6pHW-jghkY-48RRCK-6G4X4t-nz72cV-H2byd-hgEr5E-6bZniQ-a1uFaG-xEwhP-fbr2A-h9dfEA-9boV6g-agFKsF-6tT1Sf-8ifkMN-Z9NSH-7X2D9S-9sw5u-7REsUP-9sw4e-5yWqE1-4ZtSK9-48RRzV-48U1oX-bhw1RH-9wbYES-9TGcae-6Nxb7U-6iYWta-hgEzY1-q73iA-48Xr71-64VS31-xgR6j-VykLW-7K5Xim">Venus de Milo</a></td></tr>
+            <tr><td>Road Fun</td><td><a href="https://www.flickr.com/photos/guest_family/2409352541/in/photolist-4EUyz4-oJsDYA-5hpXhW-qjaiWW-4Zagm7-bCTHhT-6cszEH-3vbWGK-brJx2M-gdke2K-4X1dP6-8EDwgG-596vLH-feTDUz-GTwM-aN4HWk-4vQLrY-4kKKfy-23EyoQ-dCVKEd-39aGT-78Wy1j-6mLkRs-8Ct3MK-83eeJC-EnDBZ-oPq-81cAtP-tLsoV-8YWdhm-9VWf38-g4Ufc9-aJeE5F-fdP2nn-7gAhAo-548DKa-9ZxBiY-6ZgxHH-6Zgxxt-axFJxd-dmAQ4K-g4j71P-4XHMNv-72iBDe-o7F7QD-fndHzP-5yY6v4-8CE2zq-mAsCYi-61aN3o">Lazy Sunday</a></td></td>
+            <tr><td>Casey Florig</td><td><a href="https://www.flickr.com/photos/caseyflorig/14566002587/">Walking Dead</a></td></tr>
+            <tr><td>Jamiecat</td><td><a href="https://www.flickr.com/photos/jamiecat/15511745826/">Zombie Day Toulouse 2014</a></td></tr>
+            <tr><td>marcovdz</td><td><a href="https://www.flickr.com/photos/marcovdz/4520986339/in/photolist-7TveJk-4krkGT-6Y7Awp-nEMudt-5DGN8d-nm3ZKP-asHMZK-4iVtf-8LJErD-7ZcDu1-4tJ1Ek-p3kyJE-jAi7r8-dv9Lyj-4EjNgb-8LJDbp-bHk218-o7VQqo-21iMxv-3XCaUc-dv9LCJ-q79JUS-saKRaR-72V1VB-rBL1JL-aua5zi-qVjSER-rcG4ad-nDYCEY-sVrQfR-72UUuc-2KtvWU-7VLmyF-o8aRun-rUWPFy-72UVp2-nm3Xus-no6RJc-nmkn3a-njhSAY-nmkmSv-nmkmNx-nmnFSu-nm3WVG-no6Rag-nmnFCw-nm3WH7-no6QYp-njhRP7-nm3Wub">Compressed Car</a></td></tr>
+            <tr><td>Andrew Becraft</td><td><a href="https://www.flickr.com/photos/dunechaser/2936384537/in/album-72157622492105999/">Crate full of BrickArms ordnance</a></td></tr>
+            <tr><td>Owen Massey McKnight</td><td><a href="https://www.flickr.com/photos/addedentry/3273096118/in/photolist-5ZetrG-dAZqD7-iG2xpi-k2NKw-rXZAPk-9YyoVo-bPE2kM-c4g229-Bbux6-dXe4tp-6DHLVU-c4ncMd-8fTcTK-cHLKkG-aa5yFf-e1uzHj-7o3UiA-NPwzi-b6A6xH-pX3VXj-hVDxYU-9Z3W2Z-ahZ2cw-btv9j4-gdfPzK-6fPBQj-9wyobt-gdfPrN-gdgzkD-gdfWyU-gdfRRN-gdfZd3-brEADF-8gmvN-brEAQ4-9x4oEd-9x1LXK-9x4KE3-9x1JTe-9x4JnG-9x1JpH-9x1J9k-9x4H7N-9x1H2v-9x1GMB-9x4Gp9-2y2Fkq-8aDMVD-whrzd-49QQZv/">Dictionary pigeonholes</a></td></tr>
+            
+          </table>
+        </section>
+      </div>
+    </div>
 		<script src="lib/js/head.min.js"></script>
 		<script src="js/reveal.js"></script>
 
@@ -384,7 +393,7 @@ Reveal.addEventListener( 'customevent', function() {
 			// Full list of configuration options available at:
 			// https://github.com/hakimel/reveal.js#configuration
 			Reveal.initialize({
-				controls: true,
+				controls: false,
 				progress: true,
 				history: true,
 				center: true,

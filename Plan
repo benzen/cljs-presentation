@@ -1,0 +1,154 @@
+Objectifs
+  Ce qui ne vas pas arriver 
+    ♥ syntaxe lisp (même si elle est très simple)
+    Meilleur language de l'univers (même si c'est bien meilleur que js)
+
+  Ce que je voudrais qui arrive
+    Allez voir ce qui se passe ailleurs:
+      autre language
+      autre plateforme
+      autre communauté
+
+Clojurescript origins
+  Clojurescript histoire 101
+    Lisp 1958 (John McCarthy)
+    ... (plein d'autre lisp sont inventé)
+    Clojure 2007 (Rich Hickey) 
+      lisp compilé -> bytecode JVM
+    Clojurescript 2011 (Rich Hickey)
+      lisp compilé -> bytecode Browser (aka Javascript)
+
+  Target
+    browser
+    node/io.js/nio.js
+
+  Google closure
+    library
+    compiler
+
+Language
+
+  Syntaxe
+    Symbol abc
+    String "abc"
+    keyword :abc
+    List () (accès par la tête)
+    Vector [] (accès par index)
+    Map    {:key "value"} (les clef peuvent être d'autres structure)
+    Set #{"pomme"}
+    Appel de méthode (inc 10)
+    
+    c'est tout, pas de if/switch/try
+
+  Expression / Statment
+    Js 
+      if est un statment 
+        -> ne retourne pas de valeur
+      Statment =~ Mot-clef
+
+    Cljs ou Coffee
+      Tout est expression 
+        -> if retourne une valeur
+
+  Example de code
+    ```
+      (map inc [1 2 3 4])
+      ;; => (2 3 4 5)
+    ```
+
+  Langague super simple
+    Trop simple ?
+    Extensible avec des macro en clojure
+    cljs /= clojure
+
+  Namespace
+    Groupe de fonctions qui traite du même domaine/problème
+    se regroupe dans un champs d'un objet
+
+  Interop Javascript
+    Manière classique (namespace js)
+      js/Date
+      js/Array
+      js/MyFunkyType
+      (js/alert "some text")
+      ...
+    
+     output direct de la string en js (sans validation)
+      (js* "myFunky-weirdMethod(a b c)")
+
+    reader literral
+      #js {key}
+      -> non récursif
+
+    js->cljs ou cljs->js
+      Conversion de structure de données
+      -> récursive
+
+    
+Librairie core
+  
+  Persistent Immutable data strcture
+     Can saftely pass object to another function/module
+     Garbage collector V8 est -très- rapide
+     Cout d'utilisation négligable
+
+Meilleur doc de l'univers
+  Doc de cljs est très pauvre 
+  on suppose que c'est tout comme clojure
+  Partie interop
+
+Build tool
+  Clojurescript compiler
+  Leiningen
+    1 tâche = 1 vm
+  Boot (New kid on the block)
+    1 vm
+    build process as composition of function
+
+React + immutability
+  Check for update => comparaison de pointeur
+  3/4 Modèle différent
+    Om: très proche du modèle objet/protocole de React
+    Reagent: Simplicité poussé à l'extreme
+  undo/redo: simple et gratuit
+  possibilité de copier l'état complet de l'app
+  auto-reload while writing
+
+edn
+  edn format natif de tranfert de donnée    
+  même sémantique que le language + extensibilité
+  très lent par rapport à JSON.parse/JSON.stringify
+  Human readable
+
+Transit-js
+  riche set de data type + extensibilité
+  optimization pour le transfert entre machines
+  presque la vitesse de JSON.parse/JSON.stringify
+
+cljs-test
+  test unitaire classic
+  Test de propriété
+
+core-logic
+  Moteur programmation logic
+  Permet de résoudre des puzzles
+  Propose des solution possible pour un set de donnée
+
+  axé sur les listes
+  pas encore de support de l'arithmétique
+
+core-async => CSP
+
+  (go )
+  (> chan ...)
+  (< chan ...)
+
+pattern matching
+
+typing
+  Extension des type via protocole (kinda Java interface)
+
+Futur
+  self contains ?
+  core.logic avec arithmetic
+  Meilleur doc pour cljs (cljs.info)

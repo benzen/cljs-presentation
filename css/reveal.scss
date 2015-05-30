@@ -1313,4 +1313,14 @@ body {
 	visibility: hidden;
 }
 
-
+/***
+ * User defined css
+ ***/
+table.no-border td {
+  border-color: transparent !important;
+  border: none !important; 
+}
+ul {
+  list-style: none;
+  list-style-type: none !important;
+}
